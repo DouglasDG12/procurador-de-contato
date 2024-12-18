@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Procurador de contatos</title>
+</head>
+
+<body>
+
+<p></p>
+
+<input type="text" placeholder="Digite o nome do contato">
+
+<button onclick="cliquei()">
+    Procurar
+</button>
+
+</body>
+
+<script>
+
+let paragrafo = document.querySelector("p")
+
+let input = document.querySelector("input")
+
+const users = [
+    {name: "Douglas", Number: "(65) 984390101"},
+    {name: "Dani", Number: "(65) 12345678"},
+    {name: "KidinhaShow", Number: "(65) 87654321"},
+    {name: "Loren", Number:"(65) 23456789"},
+    {name: "jr", Number:"(65) 12121212" }
+]
+
+
+function cliquei() {
+    
+    for (let i= 0; i < users.length; i++) {
+     
+        if(input.value.toLowerCase() === users[i].name.toLowerCase() ){
+            paragrafo.innerHTML =`Contato encontrado Nome: ${users[i].name} Tel: ${users[i].Number}`
+            break
+        }else{
+            paragrafo.innerHTML ="Contato não encontrado, tente novamente"
+        }
+
+
+        
+    }
+
+}
+
+
+</script>
+
+</html>
